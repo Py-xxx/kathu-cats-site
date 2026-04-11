@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate — Kathu Cats</title>
+  <meta name="description" content="Support Kathu Cats with a once-off or monthly donation. Every rand goes directly to vet bills, sterilisations, food, and emergency rescues." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Kathu Cats</a>
+      <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="what-we-do.html">What We Do</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="donate.html" class="btn-nav-donate">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="label">Donate</span>
+        <h1>Support the work directly</h1>
+        <p>Kathu Cats is a non-profit initiative. In reality, far more goes into the work than is ever received back. Every donation reduces that gap and allows more animals to be helped.</p>
+      </div>
+    </section>
+
+    <!-- WHERE MONEY GOES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header centered fade-in">
+          <span class="label-tag">Transparency</span>
+          <h2>Where your money goes</h2>
+          <p>No administration fees. No salaries. Every rand donated goes to one of these four areas.</p>
+        </div>
+        <div class="donate-breakdown fade-in">
+          <div class="donate-breakdown-card">
+            <span class="breakdown-icon">🏥</span>
+            <h4>Vet Bills</h4>
+            <p>The largest single cost. Emergency visits, surgery, medication, and routine treatments for cats in our care.</p>
+          </div>
+          <div class="donate-breakdown-card">
+            <span class="breakdown-icon">✂️</span>
+            <h4>Sterilisation</h4>
+            <p>Each procedure costs hundreds of rands. It is the most impactful investment we make — preventing entire future litters of suffering.</p>
+          </div>
+          <div class="donate-breakdown-card">
+            <span class="breakdown-icon">🍽️</span>
+            <h4>Food &amp; Supplies</h4>
+            <p>Ongoing food for cats in foster care and colony cats, plus litter, carriers, and basic medical supplies.</p>
+          </div>
+          <div class="donate-breakdown-card">
+            <span class="breakdown-icon">🚨</span>
+            <h4>Emergency Rescues</h4>
+            <p>Urgent interventions — transport, immediate vet treatment, and stabilisation for cats found in critical condition.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENT METHODS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Make a donation</h2>
+          <p>Enter an amount, then choose your payment method below.</p>
+        </div>
+
+        <div style="max-width: 460px; margin-bottom: var(--space-xl);" class="fade-in">
+          <label for="donate-amount" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.5rem;">Amount (ZAR)</label>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <span style="font-size: 1.2rem; font-weight: 700; color: var(--text-light);">R</span>
+            <input type="number" id="donate-amount" min="10" step="10" placeholder="250"
+              style="font-family: var(--font); font-size: 1.4rem; font-weight: 700; padding: 0.6rem 1rem; border: 2px solid var(--border); border-radius: var(--radius); width: 100%; color: var(--text); background: var(--bg); transition: border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+          </div>
+          <div class="donation-amounts">
+            <button class="donation-amount-btn" type="button" onclick="document.getElementById('donate-amount').value=50">R50</button>
+            <button class="donation-amount-btn" type="button" onclick="document.getElementById('donate-amount').value=100">R100</button>
+            <button class="donation-amount-btn" type="button" onclick="document.getElementById('donate-amount').value=250">R250</button>
+            <button class="donation-amount-btn" type="button" onclick="document.getElementById('donate-amount').value=500">R500</button>
+            <button class="donation-amount-btn" type="button" onclick="document.getElementById('donate-amount').value=1000">R1 000</button>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-light); margin-top: 0.6rem; margin-bottom: 0;">R250 = one sterilisation &nbsp;·&nbsp; R500 = a vet consultation &nbsp;·&nbsp; R1 000 = a week of emergency care</p>
+        </div>
+
+        <div class="grid-3 fade-in">
+
+          <!-- PAYFAST -->
+          <div class="payment-card">
+            <div>
+              <div class="payment-name">PayFast</div>
+              <div class="payment-desc">Secure online payments for South Africa. Accepts credit/debit cards, instant EFT, and more. Supports recurring donations.</div>
+            </div>
+            <div style="background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-sm) var(--space-md); font-size: 0.85rem; color: var(--text-light);">
+              Redirects to a secure PayFast payment page. Your card details are never shared with us.
+            </div>
+            <a href="#" class="btn btn-primary" style="text-align: center; justify-content: center;" aria-label="Donate via PayFast (payment link placeholder)">
+              Donate via PayFast
+            </a>
+            <p style="font-size: 0.75rem; color: var(--text-light); margin: 0;">Payment link will be active once set up</p>
+          </div>
+
+          <!-- YOCO -->
+          <div class="payment-card">
+            <div>
+              <div class="payment-name">Yoco</div>
+              <div class="payment-desc">Card payments processed through Yoco. Fast, secure, and simple — no account required.</div>
+            </div>
+            <div style="background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-sm) var(--space-md); font-size: 0.85rem; color: var(--text-light);">
+              Pay by credit or debit card. Transactions are encrypted and processed securely.
+            </div>
+            <a href="#" class="btn btn-primary" style="text-align: center; justify-content: center;" aria-label="Donate via Yoco (payment link placeholder)">
+              Donate via Yoco
+            </a>
+            <p style="font-size: 0.75rem; color: var(--text-light); margin: 0;">Payment link will be active once set up</p>
+          </div>
+
+          <!-- EFT -->
+          <div class="payment-card">
+            <div>
+              <div class="payment-name">EFT / Bank Transfer</div>
+              <div class="payment-desc">Direct bank transfer. No fees, no third party. Use your own banking app or internet banking.</div>
+            </div>
+            <div class="eft-details">
+              <table>
+                <tr>
+                  <td>Bank</td>
+                  <td>[Bank Name]</td>
+                </tr>
+                <tr>
+                  <td>Account Name</td>
+                  <td>Kathu Cats</td>
+                </tr>
+                <tr>
+                  <td>Account No.</td>
+                  <td>[Account Number]</td>
+                </tr>
+                <tr>
+                  <td>Branch Code</td>
+                  <td>[Branch Code]</td>
+                </tr>
+                <tr>
+                  <td>Reference</td>
+                  <td>Donation + Your Name</td>
+                </tr>
+              </table>
+            </div>
+            <div style="background: #FFF3E8; border-radius: var(--radius); padding: 0.5rem var(--space-sm); font-size: 0.8rem; color: var(--accent-dark);">
+              Please use your name as reference so we can acknowledge your donation.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="col-2" style="align-items: start;">
+          <div class="fade-in">
+            <span class="label-tag">Trust</span>
+            <h2 class="mb-md">We are honest about where your money goes</h2>
+            <p class="trust-quote">
+              "This work continues no matter what — donations help reduce the growing burden of vet bills and allow more animals to be helped. Without them, the work still happens, but it costs the volunteers more, and we can do less."
+            </p>
+            <div class="divider"></div>
+            <p style="color: var(--text-light); font-size: 0.95rem;">We do not have a formal audit process at this stage. What we can tell you is that every donation received goes to animal care costs — food, vet bills, sterilisation, and emergency treatment. There is no overhead, no salary, and no administration cost that donations are used to cover.</p>
+            <p style="color: var(--text-light); font-size: 0.95rem;">If you want to know more about how a specific donation was used, contact us. We will answer directly.</p>
+            <div class="notice-box mt-md">
+              <strong>Note:</strong> Kathu Cats is not a registered NPO. Donations are not tax-deductible under Section 18A. We are transparent about this so you can make an informed decision.
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="img-placeholder img-placeholder-4-3" style="border-radius: 14px;">Photo — Cat receiving care</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Every donation keeps this going.</h2>
+        <p>This work continues regardless — but your support determines how much of it we can do, and how many animals we can reach.</p>
+        <div class="btn-actions">
+          <a href="#" class="btn btn-primary btn-lg">Donate Now</a>
+          <a href="contact.html" class="btn btn-outline-light btn-lg">Questions? Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Kathu Cats</a>
+          <p>Kathu, Northern Cape, South Africa.<br />A non-profit rescue effort. More goes in than ever comes back.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="what-we-do.html">What We Do</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:placeholder@kathucats.co.za">placeholder@kathucats.co.za</a></li>
+            <li><a href="contact.html">Send a message</a></li>
+            <li><a href="contact.html">Facebook</a></li>
+            <li><a href="contact.html">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kathu Cats — Kathu, Northern Cape, South Africa</p>
+        <p class="footer-tagline">A non-profit rescue effort. More goes in than ever comes back.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
