@@ -175,11 +175,21 @@ strong {
 }
 
 .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-size: 1.35rem;
   font-weight: 800;
   color: var(--accent);
   letter-spacing: -0.02em;
   flex-shrink: 0;
+}
+
+.nav-logo img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-logo:hover {
