@@ -186,8 +186,8 @@ strong {
 }
 
 .nav-logo img {
-  width: clamp(1.25rem, 2.5vw, 1.6rem);
-  height: clamp(1.25rem, 2.5vw, 1.6rem);
+  height: calc(var(--nav-h) * 0.35);
+  width: auto;
   object-fit: contain;
   display: block;
 }
@@ -1218,11 +1218,6 @@ strong {
   .nav-logo {
     gap: 0.35rem;
     font-size: 1rem;
-  }
-
-  .nav-logo img {
-    width: 1.15rem;
-    height: 1.15rem;
   }
 
   .hero {
