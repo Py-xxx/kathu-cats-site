@@ -105,3 +105,35 @@
   })();
 
 })();
+
+if (typeof lucide !== 'undefined') lucide.createIcons();
+
+/* --- Auto Image Extension Resolver ---
+   Finds every <img data-auto-src="..."> and tries extensions in order
+   until one loads. Supports jpg, jpeg, png, webp, avif.
+------------------------------------------------------------ */
+(function () {
+  var EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp', 'avif'];
+
+  function resolveImage(img) {
+    var base = img.getAttribute('data-auto-src');
+    if (!base) return;
+
+    var idx = 0;
+
+    function tryNext() {
+      if (idx >= EXTENSIONS.length) return; // no match found — image stays blank
+      var ext = EXTENSIONS[idx++];
+      var probe = new Image();
+      probe.onload = function () {
+        img.src = probe.src;
+      };
+      probe.onerror = tryNext;
+      probe.src = base + '.' + ext;
+    }
+
+    tryNext();
+  }
+
+  document.querySelectorAll('img[data-auto-src]').forEach(resolveImage);
+})();

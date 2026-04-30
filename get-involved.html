@@ -7,8 +7,9 @@
   <meta name="description" content="Volunteer, foster, adopt, donate supplies, or spread the word. Find out how you can support Kathu Cats." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -16,7 +17,7 @@
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/kathu-cats-logo.png" alt="" aria-hidden="true" />
+        <img data-auto-src="assets/images/kathu-cats-logo" alt="" aria-hidden="true" />
         <span>Kathu Cats</span>
       </a>
       <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -66,7 +67,7 @@
 
           <!-- VOLUNTEER -->
           <div class="involve-card fade-in">
-            <span class="involve-icon">🙋</span>
+            <span class="involve-icon"><i data-lucide="user-plus" class="icon-xl"></i></span>
             <span class="local-badge">Kathu &amp; surrounds only</span>
             <h3>Volunteer</h3>
             <p>Help with transport, feeding, trap-neuter-return operations, home checks, or general hands-on support. No experience necessary — just reliability and a willingness to show up.</p>
@@ -75,7 +76,7 @@
 
           <!-- FOSTER -->
           <div class="involve-card fade-in">
-            <span class="involve-icon">🏡</span>
+            <span class="involve-icon"><i data-lucide="home" class="icon-xl"></i></span>
             <span class="local-badge">Kathu &amp; surrounds only</span>
             <h3>Foster</h3>
             <p>Provide temporary care for a cat in recovery or rehabilitation. Fosters are the backbone of our operation — without homes to place cats in, our rescue capacity is severely limited.</p>
@@ -84,7 +85,7 @@
 
           <!-- ADOPT -->
           <div class="involve-card fade-in">
-            <span class="involve-icon">🐱</span>
+            <span class="involve-icon"><i data-lucide="cat" class="icon-xl"></i></span>
             <span class="local-badge">Kathu &amp; surrounds only</span>
             <h3>Adopt</h3>
             <p>Give a cat a permanent home. All our cats are sterilised, vaccinated, and assessed before adoption. We take the placement process seriously — for the cat's benefit and yours.</p>
@@ -97,7 +98,7 @@
 
           <!-- DONATE SUPPLIES -->
           <div class="involve-card fade-in">
-            <span class="involve-icon">📦</span>
+            <span class="involve-icon"><i data-lucide="package" class="icon-xl"></i></span>
             <h3>Donate Supplies</h3>
             <p>Food, litter, carriers, blankets, and medical supplies are always needed. If you are based in Kathu, supplies can be dropped off directly. If you are further afield, contact us about courier options.</p>
             <div style="margin-bottom: var(--space-sm);">
@@ -115,7 +116,7 @@
 
           <!-- SPREAD AWARENESS -->
           <div class="involve-card fade-in">
-            <span class="involve-icon">📣</span>
+            <span class="involve-icon"><i data-lucide="megaphone" class="icon-xl"></i></span>
             <h3>Spread Awareness</h3>
             <p>Share our page, tell people about the work, and help us reach potential donors, fosters, and adopters. Word of mouth remains the most effective way to grow support for a small local effort like ours.</p>
             <div style="margin-bottom: var(--space-sm);">
@@ -147,7 +148,7 @@
             <a href="contact.html" class="btn btn-primary mt-sm">Enquire about fostering</a>
           </div>
           <div class="fade-in">
-            <div class="img-placeholder img-placeholder-4-3" style="border-radius: 14px; margin-bottom: 1rem;">Photo — Cat in foster home</div>
+            <img data-auto-src="assets/images/involve-foster" alt="Cat settled in a foster home" style="width: 100%; height: auto; border-radius: 14px; display: block; margin-bottom: 1rem;" />
             <div class="card" style="border-left: 3px solid var(--accent); border-radius: var(--radius);">
               <p style="font-style: italic; color: var(--text-light); font-size: 0.92rem; margin-bottom: 0;">"I fostered one cat while she recovered from surgery. It took three weeks, barely any space, and very little effort on my part. She got adopted by a family with kids and is thriving."</p>
               <p style="margin-top: 0.75rem; margin-bottom: 0; font-size: 0.82rem; font-weight: 600; color: var(--text-light);">— Kathu foster carer</p>

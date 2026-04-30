@@ -7,8 +7,9 @@
   <meta name="description" content="Support Kathu Cats with a once-off or monthly donation. Every rand goes directly to vet bills, sterilisations, food, and emergency rescues." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -16,7 +17,7 @@
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/kathu-cats-logo.png" alt="" aria-hidden="true" />
+        <img data-auto-src="assets/images/kathu-cats-logo" alt="" aria-hidden="true" />
         <span>Kathu Cats</span>
       </a>
       <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -55,22 +56,22 @@
         </div>
         <div class="donate-breakdown fade-in">
           <div class="donate-breakdown-card">
-            <span class="breakdown-icon">🏥</span>
+            <span class="breakdown-icon"><i data-lucide="stethoscope" class="icon-lg"></i></span>
             <h4>Vet Bills</h4>
             <p>The largest single cost. Emergency visits, surgery, medication, and routine treatments for cats in our care.</p>
           </div>
           <div class="donate-breakdown-card">
-            <span class="breakdown-icon">✂️</span>
+            <span class="breakdown-icon"><i data-lucide="scissors" class="icon-lg"></i></span>
             <h4>Sterilisation</h4>
             <p>Each procedure costs hundreds of rands. It is the most impactful investment we make — preventing entire future litters of suffering.</p>
           </div>
           <div class="donate-breakdown-card">
-            <span class="breakdown-icon">🍽️</span>
+            <span class="breakdown-icon"><i data-lucide="utensils" class="icon-lg"></i></span>
             <h4>Food &amp; Supplies</h4>
             <p>Ongoing food for cats in foster care and colony cats, plus litter, carriers, and basic medical supplies.</p>
           </div>
           <div class="donate-breakdown-card">
-            <span class="breakdown-icon">🚨</span>
+            <span class="breakdown-icon"><i data-lucide="siren" class="icon-lg"></i></span>
             <h4>Emergency Rescues</h4>
             <p>Urgent interventions — transport, immediate vet treatment, and stabilisation for cats found in critical condition.</p>
           </div>
@@ -190,14 +191,14 @@
               "This work continues no matter what — donations help reduce the growing burden of vet bills and allow more animals to be helped. Without them, the work still happens, but it costs the volunteers more, and we can do less."
             </p>
             <div class="divider"></div>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Every donation received goes to animal care costs — food, vet bills, sterilisation, and emergency treatment. There is no overhead, no salary, and no administration cost that donations are used to cover.</p>
+            <p style="color: var(--text-light); font-size: 0.95rem;">We do not have a formal audit process at this stage. What we can tell you is that every donation received goes to animal care costs — food, vet bills, sterilisation, and emergency treatment. There is no overhead, no salary, and no administration cost that donations are used to cover.</p>
             <p style="color: var(--text-light); font-size: 0.95rem;">If you want to know more about how a specific donation was used, contact us. We will answer directly.</p>
             <div class="notice-box mt-md">
-              Kathu Cats & Kitten Rescues is a registered NPC (2022/762798/08) and approved PBO (No. 930081645). <strong>Donations are tax-deductible under Section 18A</strong> — request a receipt after donating and we will issue one.
+              <strong>Registered &amp; Accountable:</strong> Kathu Cats &amp; Kitten Rescues is a registered Non Profit Company (NPC Reg. 2022/762798/08) and an approved Public Benefit Organisation (PBO No. 930081645). Donations are tax-deductible under Section 18A — we can issue receipts upon request.
             </div>
           </div>
           <div class="fade-in">
-            <div class="img-placeholder img-placeholder-4-3" style="border-radius: 14px;">Photo — Cat receiving care</div>
+            <img data-auto-src="assets/images/donate-care" alt="Cat receiving care" style="width: 100%; height: auto; border-radius: 14px; display: block;" />
           </div>
         </div>
       </div>

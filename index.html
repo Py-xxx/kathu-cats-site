@@ -7,8 +7,9 @@
   <meta name="description" content="Kathu Cats is a non-profit cat rescue effort based in Kathu, Northern Cape, South Africa. We rescue, sterilise, rehabilitate and rehome cats in need." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -16,7 +17,7 @@
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/kathu-cats-logo.png" alt="" aria-hidden="true" />
+        <img data-auto-src="assets/images/kathu-cats-logo" alt="" aria-hidden="true" />
         <span>Kathu Cats</span>
       </a>
       <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -52,17 +53,34 @@
       </div>
     </section>
 
+    <!-- ACTIVE CAMPAIGNS -->
+    <section class="section campaigns-section">
+      <div class="container">
+        <div class="campaigns-header">
+          <span class="campaign-badge">Active Campaign</span>
+          <h2>Currently Raising Funds</h2>
+          <p>Support a cat currently in our care. Every donation goes directly to their treatment.</p>
+        </div>
+        <div class="campaign-display fade-in">
+          <img data-auto-src="assets/images/active-campaign" alt="Current active rescue campaign" class="campaign-img" />
+          <div class="campaign-cta">
+            <a href="donate.html" class="btn btn-primary btn-lg">Donate to This Campaign</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- QUICK SUMMARY -->
     <section class="section summary-section">
       <div class="container">
         <div class="grid-3">
           <div class="summary-col fade-in">
             <h3>Who We Are</h3>
-            <p>Kathu Cats & Kitten Rescues is a registered NPC based in Kathu, Northern Cape. A volunteer-driven team runs the day-to-day work — no paid staff, no admin overhead. Just the work.</p>
+            <p>Kathu Cats & Kitten Rescues is a registered NPC based in Kathu, Northern Cape. A volunteer-driven team runs the day-to-day work — no paid staff. Just the work.</p>
           </div>
           <div class="summary-col fade-in">
             <h3>What We Do</h3>
-            <p>We rescue abandoned and injured cats, provide medical care, sterilise to prevent future suffering, rehabilitate, and find responsible homes for cats that are ready.</p>
+            <p>We rescue abandoned and injured kittens, provide medical care, sterilise to prevent future suffering, rehabilitate, and find responsible homes for kittens that are ready.</p>
           </div>
           <div class="summary-col fade-in">
             <h3>Why It Matters</h3>
@@ -80,8 +98,8 @@
           <h2>The Reality on the Ground</h2>
         </div>
         <div class="reality-text" style="max-width: 800px;">
-          <p class="fade-in">Kathu is a mining town in the Northern Cape with a persistent stray and abandoned cat population. When families move — and in a town tied to mining contracts, they do — cats are left behind. They breed. They struggle. They show up injured, malnourished, or in desperate need of care that no-one is providing.</p>
-          <p class="fade-in">There are no shelters. No municipal animal welfare infrastructure. The burden falls entirely on individuals who choose to step in. The cost of a single vet visit, a sterilisation, or an emergency treatment comes directly out of pocket — or from donations that are never guaranteed and never enough.</p>
+          <p class="fade-in">Kathu is a mining town in the Northern Cape with a persistent stray and abandoned cat population. When families move — and in a town tied to mining contracts, they do — cats are left behind. They breed. They struggle. They show up injured, malnourished, or in desperate need of care that no one is providing.</p>
+          <p class="fade-in">There are no shelters or SPCAs nearby. No municipal animal welfare infrastructure. The burden falls entirely on individuals who choose to step in. The cost of a single vet visit, a sterilisation, or an emergency treatment comes directly out of pocket — or from donations that are never guaranteed and never enough.</p>
           <p class="fade-in">This isn't a passion project with a comfortable budget. It's a daily effort to keep animals alive and reduce long-term suffering through sterilisation — the only intervention that actually works. We are not catching up. But we are making a dent, and we intend to keep making it.</p>
         </div>
       </div>
@@ -97,25 +115,25 @@
         </div>
         <div class="grid-4">
           <div class="card fade-in">
-            <span class="card-icon">🐾</span>
+            <span class="card-icon"><i data-lucide="paw-print" class="icon-lg"></i></span>
             <h3>Rescue</h3>
             <p>Taking in abandoned, injured, and vulnerable cats found in and around Kathu.</p>
             <a href="what-we-do.html" class="card-link">Learn more →</a>
           </div>
           <div class="card fade-in">
-            <span class="card-icon">✂️</span>
+            <span class="card-icon"><i data-lucide="scissors" class="icon-lg"></i></span>
             <h3>Sterilisation</h3>
             <p>The most effective long-term solution to overpopulation and suffering.</p>
             <a href="what-we-do.html" class="card-link">Learn more →</a>
           </div>
           <div class="card fade-in">
-            <span class="card-icon">🏥</span>
+            <span class="card-icon"><i data-lucide="stethoscope" class="icon-lg"></i></span>
             <h3>Rehabilitation</h3>
             <p>Nursing cats back to health and socialising them for life in a home.</p>
             <a href="what-we-do.html" class="card-link">Learn more →</a>
           </div>
           <div class="card fade-in">
-            <span class="card-icon">🏠</span>
+            <span class="card-icon"><i data-lucide="home" class="icon-lg"></i></span>
             <h3>Adoption</h3>
             <p>Carefully matching cats with responsible owners who are committed to their care.</p>
             <a href="what-we-do.html" class="card-link">Learn more →</a>

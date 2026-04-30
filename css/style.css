@@ -4,16 +4,16 @@
    ============================================================ */
 
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* --- Custom Properties --- */
 :root {
   --bg: #FAFAF8;
-  --bg-alt: #EEEEE9;
+  --bg-alt: #EAEBE8;
   --text: #1C1C1A;
   --text-light: #666360;
-  --accent: #3D6B5C;
-  --accent-dark: #244237;
+  --accent: #2B6CB0;
+  --accent-dark: #1A4480;
   --border: #DDD9D0;
 
   --radius: 8px;
@@ -32,6 +32,7 @@
   --max-w: 1100px;
 
   --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'DM Serif Display', Georgia, serif;
 }
 
 /* --- Reset & Base --- */
@@ -83,6 +84,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-weight: 700;
   color: var(--text);
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font);
+  font-weight: 700;
 }
 
 h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
@@ -186,10 +198,9 @@ strong {
 }
 
 .nav-logo img {
-  height: calc(var(--nav-h) * 0.35);
+  height: 28px;
   width: auto;
-  object-fit: contain;
-  display: block;
+  display: none; /* hide until image exists */
 }
 
 .nav-logo span {
@@ -270,20 +281,22 @@ strong {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.7rem 1.5rem;
+  padding: 0.75rem 1.6rem;
   font-family: var(--font);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
   border-radius: var(--radius);
   border: 2px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   white-space: nowrap;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .btn-primary {
@@ -400,7 +413,7 @@ strong {
 .hero-bg-placeholder {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #0D1A15 0%, #1E3C2F 40%, #132B21 100%);
+  background: linear-gradient(135deg, #0A1528 0%, #162B50 40%, #0D1F3C 100%);
   z-index: 0;
 }
 
@@ -458,15 +471,16 @@ strong {
 /* --- Cards --- */
 .card {
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius-lg);
-  padding: var(--space-md);
-  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  padding: var(--space-lg);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
 }
 
 .card-icon {
@@ -616,17 +630,17 @@ strong {
 .page-hero {
   background: var(--bg-alt);
   border-bottom: 1px solid var(--border);
-  padding: var(--space-xl) 0 var(--space-lg);
+  padding: var(--space-xl) 0;
 }
 
 .page-hero .label {
   display: inline-block;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .page-hero h1 {
@@ -637,7 +651,8 @@ strong {
 .page-hero p {
   color: var(--text-light);
   font-size: 1.1rem;
-  max-width: 600px;
+  max-width: 580px;
+  line-height: 1.75;
 }
 
 /* --- Content Sections (about, etc.) --- */
@@ -664,13 +679,15 @@ strong {
   display: flex;
   gap: var(--space-md);
   padding: var(--space-md);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius-lg);
-  transition: box-shadow 0.25s ease;
+  background: var(--bg);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s ease;
 }
 
 .wwd-card:hover {
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.1);
 }
 
 .wwd-icon {
@@ -709,14 +726,16 @@ strong {
 
 /* --- Story Cards --- */
 .story-card {
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: box-shadow 0.25s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
 }
 
 .story-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
 }
 
 .story-card-body {
@@ -735,16 +754,17 @@ strong {
 /* --- Involvement Cards --- */
 .involve-card {
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius-lg);
   padding: var(--space-lg) var(--space-md);
   text-align: center;
-  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
 }
 
 .involve-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
 }
 
 .involve-card .involve-icon {
@@ -766,7 +786,7 @@ strong {
 
 .local-badge {
   display: inline-block;
-  background: #EBF3EF;
+  background: #EBF2FA;
   color: var(--accent-dark);
   font-size: 0.72rem;
   font-weight: 700;
@@ -786,10 +806,11 @@ strong {
 
 .donate-breakdown-card {
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.06);
 }
 
 .donate-breakdown-card .breakdown-icon {
@@ -811,12 +832,13 @@ strong {
 
 .payment-card {
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius-lg);
   padding: var(--space-lg) var(--space-md);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.06);
 }
 
 .payment-card .payment-name {
@@ -888,7 +910,7 @@ strong {
 .donation-amount-btn.selected {
   border-color: var(--accent);
   color: var(--accent);
-  background: #EBF3EF;
+  background: #EBF2FA;
 }
 
 /* --- Donate Amount Input --- */
@@ -918,8 +940,9 @@ strong {
   align-items: flex-start;
   gap: var(--space-sm);
   padding: var(--space-md);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius-lg);
+  background: var(--bg-alt);
 }
 
 .contact-method-icon {
@@ -1098,8 +1121,8 @@ strong {
 }
 
 .notice-box {
-  background: #EBF3EF;
-  border: 1px solid #A8CFBF;
+  background: #EBF2FA;
+  border: 1px solid #A8C4E0;
   border-radius: var(--radius);
   padding: var(--space-sm) var(--space-md);
   font-size: 0.92rem;
@@ -1116,6 +1139,87 @@ strong {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* --- Lucide Icons --- */
+.card-icon i, .wwd-icon i, .involve-icon i,
+.breakdown-icon i, .contact-method-icon i {
+  display: block;
+}
+.card-icon { font-size: inherit; }
+
+[data-lucide] {
+  stroke-width: 1.5;
+  display: inline-block;
+}
+
+.icon-xl { width: 2.4rem; height: 2.4rem; stroke: var(--accent); }
+.icon-lg { width: 2rem; height: 2rem; stroke: var(--accent); }
+.icon-md { width: 1.5rem; height: 1.5rem; stroke: var(--accent); }
+.icon-sm { width: 1.1rem; height: 1.1rem; stroke: currentColor; }
+
+/* --- Campaigns Section --- */
+.campaigns-section {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.campaigns-header {
+  margin-bottom: var(--space-lg);
+}
+
+.campaign-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #EBF2FA;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+
+.campaign-badge::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.campaigns-header h2 {
+  margin-bottom: var(--space-xs);
+}
+
+.campaigns-header p {
+  color: var(--text-light);
+}
+
+.campaign-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  max-width: 480px;
+}
+
+.campaign-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  display: block;
+  box-shadow: var(--shadow-lg);
 }
 
 /* ============================================================
@@ -1189,6 +1293,10 @@ strong {
 
   .donate-breakdown {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .campaign-display {
+    align-items: stretch;
   }
 
   .footer-inner {

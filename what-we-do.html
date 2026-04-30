@@ -7,8 +7,9 @@
   <meta name="description" content="Rescue, medical care, sterilisation, rehabilitation, adoption, and ongoing colony care. Learn about the full scope of Kathu Cats' work." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -16,7 +17,7 @@
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/kathu-cats-logo.png" alt="" aria-hidden="true" />
+        <img data-auto-src="assets/images/kathu-cats-logo" alt="" aria-hidden="true" />
         <span>Kathu Cats</span>
       </a>
       <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -41,7 +42,18 @@
       <div class="container">
         <span class="label">Our Work</span>
         <h1>What We Do</h1>
-        <p>From first rescue to forever home — and everything in between. This is the full picture of what it takes to help a cat in Kathu.</p>
+        <p>Neonatal kitten rescue, TNR, spay campaigns, adoption, and more. This is the full picture of what the work involves.</p>
+      </div>
+    </section>
+
+    <!-- MISSION INTRO -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 780px;" class="fade-in">
+          <p class="lead">We are a neonatal foster care-based kitten rescue, specialising in kittens three months and younger — the most vulnerable, and the ones that suffer most without intervention.</p>
+          <p class="lead">Our second focus is TNR: trapping and sterilising feral and stray mother cats, then releasing them back into their territories to address overpopulation at its source.</p>
+          <p class="lead">We also provide compassionate care, rehabilitation, and rehoming services for stray and abandoned kittens, while actively promoting animal welfare, responsible pet ownership, and community education. Every animal that comes through our care represents real costs and a genuine commitment to their welfare.</p>
+        </div>
       </div>
     </section>
 
@@ -50,16 +62,16 @@
       <div class="container">
         <div class="col-2">
           <div class="fade-in">
-            <div class="wwd-icon" style="font-size: 3rem; margin-bottom: 1rem;">🐾</div>
+            <div class="wwd-icon" style="margin-bottom: 1rem;"><i data-lucide="paw-print" class="icon-xl"></i></div>
             <span class="label-tag">01 — Rescue</span>
-            <h2>Taking in cats that have nowhere to go</h2>
-            <p>We respond to reports of abandoned, injured, and vulnerable cats in and around Kathu. This includes cats left behind in empty houses, kittens found without a mother, animals hit by vehicles, and cats surrendered by owners who can no longer care for them.</p>
-            <p>Rescue is reactive by nature — we go where we are called. Every rescue requires transport, time, and often immediate veterinary assessment. Cats in critical condition go straight to the vet. Others are assessed, stabilised, and moved into foster care while they recover.</p>
-            <p>There is a small physical base where cats can be housed during care, but capacity is limited. Rescued cats are often placed with fosters as well — in homes, not kennels. This is better for the cats and harder on the people involved.</p>
+            <h2>Taking in kittens that have nowhere to go</h2>
+            <p>We respond to reports of abandoned, injured, and vulnerable kittens in and around Kathu. This includes kittens left behind in empty houses and kittens found without a mother.</p>
+            <p>Rescue is reactive by nature — we go where we are called. Every rescue requires transport, time, and often immediate veterinary assessment. Animals in critical condition go straight to the vet. Others are assessed, stabilised, and moved into foster care while they recover.</p>
+            <p>There is a small physical base where kittens can be housed during care, but capacity is limited. Rescued cats are often placed with fosters as well — in homes, not kennels. This is better for the cats and harder on the people involved.</p>
           </div>
           <div class="fade-in">
-            <div class="img-placeholder img-placeholder-4-3" style="border-radius: 14px; margin-bottom: 1.5rem;">Photo — Rescue in progress</div>
-            <div class="img-placeholder img-placeholder-16-9" style="border-radius: 14px;">Photo — Abandoned cat found</div>
+            <img data-auto-src="assets/images/wwd-rescue" alt="Rescue in progress" style="width: 100%; height: auto; border-radius: 14px; display: block; margin-bottom: 1.5rem;" />
+            <img data-auto-src="assets/images/wwd-abandoned" alt="Abandoned kitten found" style="width: 100%; height: auto; border-radius: 14px; display: block;" />
           </div>
         </div>
       </div>
@@ -70,13 +82,13 @@
       <div class="container">
         <div class="col-2">
           <div class="fade-in">
-            <div class="img-placeholder img-placeholder-4-3" style="border-radius: 14px;">Photo — Vet treatment</div>
+            <img data-auto-src="assets/images/wwd-vet" alt="Cat receiving veterinary treatment" style="width: 100%; height: auto; border-radius: 14px; display: block;" />
           </div>
           <div class="fade-in">
-            <div class="wwd-icon" style="font-size: 3rem; margin-bottom: 1rem;">🏥</div>
+            <div class="wwd-icon" style="margin-bottom: 1rem;"><i data-lucide="stethoscope" class="icon-xl"></i></div>
             <span class="label-tag">02 — Medical Care</span>
             <h2>Vet visits, treatment, and recovery</h2>
-            <p>Most cats we receive need some level of veterinary attention. Common issues include wounds and infections from fights or accidents, upper respiratory infections, malnourishment, parasites, and more serious injuries requiring surgery.</p>
+            <p>Most cats we receive need some level of veterinary attention. Common issues include wounds and infections from fights or accidents, feline viruses, upper respiratory infections, malnourishment, parasites, and more serious injuries requiring surgery.</p>
             <p>Vet bills are our single largest cost. A single emergency visit can cost hundreds of rands. Surgery can run into thousands. We cover these costs through donations and, when donations fall short, out of pocket. We do not turn away an animal that needs care because of cost — though that reality puts significant pressure on resources.</p>
             <p>After vet treatment, cats are monitored through recovery by foster carers who track their progress, administer medication, and report back. Nothing is rushed. A cat that is not fully recovered does not move to the next stage.</p>
           </div>
@@ -89,15 +101,15 @@
       <div class="container">
         <div class="col-2">
           <div class="fade-in">
-            <div class="wwd-icon" style="font-size: 3rem; margin-bottom: 1rem;">✂️</div>
-            <span class="label-tag">03 — Sterilisation</span>
+            <div class="wwd-icon" style="margin-bottom: 1rem;"><i data-lucide="scissors" class="icon-xl"></i></div>
+            <span class="label-tag">03 — Sterilisation &amp; TNR</span>
             <h2>The most important thing we do</h2>
             <p>Sterilisation is the only intervention that actually reduces the stray population over time. Every unsterilised female cat can produce multiple litters per year. Each of those kittens faces an uncertain future — many will not survive, and those that do will continue to breed.</p>
-            <p>We sterilise every cat we can, as a condition of adoption and as a service to cats in our community that are not going through the full adoption process. We also run targeted sterilisation efforts for known colony cats — animals that live outside but can be caught, sterilised, and returned.</p>
+            <p>We sterilise every cat in our care as a condition of adoption, and as a service to cats in the community that are not going through the full adoption process. We also run targeted sterilisation efforts for known colony cats — animals that live outside but can be caught, sterilised, and returned to their territory.</p>
             <p>It is not dramatic work. It does not produce heartwarming before-and-after photos. But it is the work that changes the trajectory — fewer suffering animals in the future because of effort put in today.</p>
           </div>
           <div class="fade-in">
-            <div class="img-placeholder img-placeholder-4-3" style="border-radius: 14px;">Photo — Sterilisation programme</div>
+            <img data-auto-src="assets/images/wwd-sterilisation" alt="Sterilisation programme" style="width: 100%; height: auto; border-radius: 14px; display: block;" />
           </div>
         </div>
       </div>
@@ -108,14 +120,14 @@
       <div class="container">
         <div class="col-2">
           <div class="fade-in">
-            <div class="img-placeholder img-placeholder-4-3" style="border-radius: 14px;">Photo — Cat in foster care</div>
+            <img data-auto-src="assets/images/wwd-foster" alt="Cat in foster care" style="width: 100%; height: auto; border-radius: 14px; display: block;" />
           </div>
           <div class="fade-in">
-            <div class="wwd-icon" style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+            <div class="wwd-icon" style="margin-bottom: 1rem;"><i data-lucide="helping-hand" class="icon-xl"></i></div>
             <span class="label-tag">04 — Rehabilitation</span>
-            <h2>Preparing cats for life in a home</h2>
-            <p>Many of the cats we rescue have had little or no positive contact with people. Feral or semi-feral cats, cats that have been mistreated, and kittens that were not properly socialised in early life all need patient, consistent work before they are ready to be adopted.</p>
-            <p>Rehabilitation happens in foster homes, not kennels. Foster carers spend time with cats daily — building trust gradually, introducing them to normal household environments, other animals, and the kind of contact they will experience in a permanent home.</p>
+            <h2>Preparing kittens for life in a home</h2>
+            <p>Many of the kittens we rescue have had little or no positive contact with people. Feral or semi-feral cats, animals that have been mistreated, and kittens that were not properly socialised in early life all need patient, consistent work before they are ready to be adopted.</p>
+            <p>Rehabilitation happens in foster homes, not kennels. Foster carers spend time with kittens daily — building trust gradually, introducing them to normal household environments, other animals, and the kind of contact they will experience in a permanent home.</p>
             <p>Some cats rehabilitate quickly. Others take months. A small number never fully socialise and are better suited to barn or outdoor homes rather than typical house environments. We are honest about this in our adoption process.</p>
           </div>
         </div>
@@ -127,7 +139,7 @@
       <div class="container">
         <div class="col-2">
           <div class="fade-in">
-            <div class="wwd-icon" style="font-size: 3rem; margin-bottom: 1rem;">🏠</div>
+            <div class="wwd-icon" style="margin-bottom: 1rem;"><i data-lucide="home" class="icon-xl"></i></div>
             <span class="label-tag">05 — Adoption</span>
             <h2>Finding the right home, not just a home</h2>
             <p>Adoption is not a transaction. It is a placement — and we take it seriously. We screen prospective adopters, ask questions, and where possible, do home checks. A cat that ends up in the wrong environment will often end up abandoned again. We are trying to break that cycle, not contribute to it.</p>
@@ -135,8 +147,8 @@
             <p style="margin-bottom: 0;">Adoption is currently available to residents of Kathu and immediately surrounding areas only. We cannot facilitate long-distance adoptions at this stage.</p>
           </div>
           <div class="fade-in">
-            <div class="img-placeholder img-placeholder-4-3" style="border-radius: 14px; margin-bottom: 1.5rem;">Photo — Cat meeting adopter</div>
-            <div class="img-placeholder img-placeholder-16-9" style="border-radius: 14px;">Photo — Cat in new home</div>
+            <img data-auto-src="assets/images/wwd-adoption" alt="Cat meeting a new adopter" style="width: 100%; height: auto; border-radius: 14px; display: block; margin-bottom: 1.5rem;" />
+            <img data-auto-src="assets/images/wwd-new-home" alt="Cat settled in new home" style="width: 100%; height: auto; border-radius: 14px; display: block;" />
           </div>
         </div>
       </div>
@@ -147,10 +159,10 @@
       <div class="container">
         <div class="col-2">
           <div class="fade-in">
-            <div class="img-placeholder img-placeholder-4-3" style="border-radius: 14px;">Photo — Colony feeding</div>
+            <img data-auto-src="assets/images/wwd-colony" alt="Colony cat feeding station" style="width: 100%; height: auto; border-radius: 14px; display: block;" />
           </div>
           <div class="fade-in">
-            <div class="wwd-icon" style="font-size: 3rem; margin-bottom: 1rem;">🍽️</div>
+            <div class="wwd-icon" style="margin-bottom: 1rem;"><i data-lucide="utensils" class="icon-xl"></i></div>
             <span class="label-tag">06 — Ongoing Care</span>
             <h2>The cats that stay in our care</h2>
             <p>Not every cat we take in will be adopted. Some are too feral, too old, or too traumatised to be placed in a typical home. Others are in long-term foster care while we work on rehabilitation. And beyond our direct rescues, we maintain feeding stations for community colony cats — strays that are sterilised and monitored but live outside.</p>
