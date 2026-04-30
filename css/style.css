@@ -198,10 +198,14 @@ strong {
 }
 
 .nav-logo img {
-  height: 32px;
-  width: auto;
+  height: calc(var(--nav-h) * 0.5);
+  width: calc(var(--nav-h) * 0.5);
+  max-height: calc(var(--nav-h) * 0.5);
+  max-width: calc(var(--nav-h) * 0.5);
   display: block;
   object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
 }
 
 .nav-logo span {
