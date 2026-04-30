@@ -2,6 +2,41 @@
   publish = "."
   functions = "netlify/functions"
 
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/what-we-do.html"
+  to = "/what-we-do"
+  status = 301
+
+[[redirects]]
+  from = "/impact.html"
+  to = "/impact"
+  status = 301
+
+[[redirects]]
+  from = "/get-involved.html"
+  to = "/get-involved"
+  status = 301
+
+[[redirects]]
+  from = "/donate.html"
+  to = "/donate"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

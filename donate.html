@@ -8,6 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/assets/images/kathu-cats-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/images/kathu-cats-logo.png" />
+  <meta property="og:image" content="https://kathucats.co.za/assets/images/kathu-cats-logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kathu Cats &amp; Kitten Rescues" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
@@ -16,7 +21,7 @@
   <!-- NAV -->
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
+      <a href="/" class="nav-logo">
         <img data-auto-src="assets/images/kathu-cats-logo" alt="" aria-hidden="true" />
         <span>Kathu Cats</span>
       </a>
@@ -24,13 +29,13 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="what-we-do.html">What We Do</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="get-involved.html">Get Involved</a></li>
-        <li><a href="donate.html" class="btn-nav-donate">Donate</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/what-we-do">What We Do</a></li>
+        <li><a href="/impact">Impact</a></li>
+        <li><a href="/get-involved">Get Involved</a></li>
+        <li><a href="/donate" class="btn-nav-donate">Donate</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -102,7 +107,7 @@
               <label for="donate-amount" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.5rem;">Amount (ZAR)</label>
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
                 <span style="font-size: 1.2rem; font-weight: 700; color: var(--text-light);">R</span>
-                <input type="number" id="donate-amount" min="10" step="10" placeholder="250"
+                <input type="number" id="donate-amount" min="1" step="1" placeholder="250"
                   style="font-family: var(--font); font-size: 1.4rem; font-weight: 700; padding: 0.6rem 1rem; border: 2px solid var(--border); border-radius: var(--radius); width: 100%; color: var(--text); background: var(--bg); transition: border-color 0.2s;"
                   onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
               </div>
@@ -177,14 +182,13 @@
               "This work continues no matter what — donations help reduce the growing burden of vet bills and allow more animals to be helped. Without them, the work still happens, but it costs the volunteers more, and we can do less."
             </p>
             <div class="divider"></div>
-            <p style="color: var(--text-light); font-size: 0.95rem;">We do not have a formal audit process at this stage. What we can tell you is that every donation received goes to animal care costs — food, vet bills, sterilisation, and emergency treatment. There is no overhead, no salary, and no administration cost that donations are used to cover.</p>
             <p style="color: var(--text-light); font-size: 0.95rem;">If you want to know more about how a specific donation was used, contact us. We will answer directly.</p>
             <div class="notice-box mt-md">
               <strong>Registered &amp; Accountable:</strong> Kathu Cats &amp; Kitten Rescues is a registered Non Profit Company (NPC Reg. 2022/762798/08) and an approved Public Benefit Organisation (PBO No. 930081645). Donations are tax-deductible under Section 18A — we can issue receipts upon request.
             </div>
           </div>
           <div class="fade-in">
-            <img data-auto-src="assets/images/donate-care" alt="Cat receiving care" style="width: 100%; height: auto; border-radius: 14px; display: block;" />
+            <img data-auto-src="assets/images/donate-care" alt="Cat receiving care" />
           </div>
         </div>
       </div>
@@ -197,7 +201,7 @@
         <p>This work continues regardless — but your support determines how much of it we can do, and how many animals we can reach.</p>
         <div class="btn-actions">
           <a href="#donate-section" class="btn btn-primary btn-lg">Donate Now</a>
-          <a href="contact.html" class="btn btn-outline-light btn-lg">Questions? Contact Us</a>
+          <a href="/contact" class="btn btn-outline-light btn-lg">Questions? Contact Us</a>
         </div>
       </div>
     </section>
@@ -209,26 +213,26 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <a href="index.html" class="footer-logo">Kathu Cats</a>
+          <a href="/" class="footer-logo">Kathu Cats</a>
           <p>Kathu, Northern Cape, South Africa.</p>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
           <h4>Pages</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="what-we-do.html">What We Do</a></li>
-            <li><a href="impact.html">Impact</a></li>
-            <li><a href="get-involved.html">Get Involved</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/what-we-do">What We Do</a></li>
+            <li><a href="/impact">Impact</a></li>
+            <li><a href="/get-involved">Get Involved</a></li>
+            <li><a href="/donate">Donate</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>
         <div class="footer-contact">
           <h4>Contact</h4>
           <ul>
             <li><a href="mailto:retha.berrange@gmail.com">retha.berrange@gmail.com</a></li>
-            <li><a href="contact.html">Send a message</a></li>
+            <li><a href="/contact">Send a message</a></li>
             <li><a href="https://www.facebook.com/p/Kathu-Cats-100083295103595/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
             <li><a href="https://wa.me/27815694678" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
           </ul>
@@ -250,7 +254,7 @@
     async function donateYoco() {
       const input = document.getElementById('donate-amount');
       const amount = parseFloat(input.value);
-      if (!amount || amount < 10) {
+      if (!amount || amount < 1) {
         input.style.borderColor = 'red';
         input.focus();
         return;

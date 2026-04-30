@@ -12,8 +12,8 @@
   --bg-alt: #EAEBE8;
   --text: #1C1C1A;
   --text-light: #666360;
-  --accent: #2B6CB0;
-  --accent-dark: #1A4480;
+  --accent: #4A90D4;
+  --accent-dark: #2B6CB0;
   --border: #DDD9D0;
 
   --radius: 8px;
@@ -198,9 +198,10 @@ strong {
 }
 
 .nav-logo img {
-  height: 28px;
+  height: 32px;
   width: auto;
-  display: none; /* hide until image exists */
+  display: block;
+  object-fit: contain;
 }
 
 .nav-logo span {
@@ -400,6 +401,41 @@ strong {
   aspect-ratio: 3 / 2;
 }
 
+/* --- Content Images --- */
+
+/* All data-auto-src images get sensible defaults */
+img[data-auto-src] {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+}
+
+/* Images inside two-column content layouts */
+.col-2 img[data-auto-src] {
+  aspect-ratio: 4 / 3;
+}
+
+/* Second image in rescue section (wwd-abandoned) sits below, use 16/9 */
+.col-2 img[data-auto-src] + img[data-auto-src] {
+  aspect-ratio: 16 / 9;
+  margin-top: 1.5rem;
+}
+
+/* Story images on impact page — consistent side-by-side height */
+.grid-2 img[data-auto-src] {
+  aspect-ratio: 3 / 2;
+}
+
+/* Campaign image — keep proportional, don't force crop */
+.campaign-img {
+  aspect-ratio: unset;
+  height: auto;
+  max-width: 560px;
+}
+
 /* --- Hero --- */
 .hero {
   position: relative;
@@ -413,7 +449,7 @@ strong {
 .hero-bg-placeholder {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #0A1528 0%, #162B50 40%, #0D1F3C 100%);
+  background: linear-gradient(135deg, #0C1E3A 0%, #1A3A6E 40%, #102646 100%);
   z-index: 0;
 }
 

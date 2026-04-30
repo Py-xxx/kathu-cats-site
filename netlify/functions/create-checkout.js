@@ -11,8 +11,8 @@ exports.handler = async function (event) {
   }
 
   const amountRand = parseFloat(body.amount);
-  if (!amountRand || amountRand < 10) {
-    return { statusCode: 400, body: JSON.stringify({ error: 'Minimum donation is R10' }) };
+  if (!amountRand || amountRand < 1) {
+    return { statusCode: 400, body: JSON.stringify({ error: 'Minimum donation is R1' }) };
   }
 
   const amountCents = Math.round(amountRand * 100);

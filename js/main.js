@@ -91,14 +91,10 @@
 
   /* --- Active Nav Link --- */
   (function setActiveNav() {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
     document.querySelectorAll('.nav-links a').forEach(function (link) {
-      const linkPath = link.getAttribute('href');
-      if (
-        linkPath === currentPath ||
-        (currentPath === '' && linkPath === 'index.html') ||
-        (currentPath === 'index.html' && linkPath === 'index.html')
-      ) {
+      const linkPath = link.getAttribute('href').replace(/\/$/, '') || '/';
+      if (linkPath === currentPath) {
         link.classList.add('active');
       }
     });
@@ -113,7 +109,7 @@ if (typeof lucide !== 'undefined') lucide.createIcons();
    until one loads. Supports jpg, jpeg, png, webp, avif.
 ------------------------------------------------------------ */
 (function () {
-  var EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp', 'avif'];
+  var EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp', 'avif'];
 
   function resolveImage(img) {
     var base = img.getAttribute('data-auto-src');
