@@ -122,7 +122,10 @@ if (typeof lucide !== 'undefined') lucide.createIcons();
   notif.innerHTML =
     '<a href="/#campaigns" class="campaign-notif-link">' +
       '<span class="campaign-notif-dot"></span>' +
-      'Active Campaign' +
+      '<span class="campaign-notif-text">' +
+        '<span class="campaign-notif-title">Active Campaign</span>' +
+        '<span class="campaign-notif-sub">See what we are up to right now</span>' +
+      '</span>' +
     '</a>' +
     '<button class="campaign-notif-close" aria-label="Dismiss">&times;</button>';
 
