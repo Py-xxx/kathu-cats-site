@@ -413,8 +413,6 @@ img[data-auto-src] {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  object-position: center;
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.07);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -424,16 +422,6 @@ img[data-auto-src] {
 .col-2 img:hover, .grid-2 img:hover {
   transform: scale(1.012);
   box-shadow: 0 10px 36px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.08);
-}
-
-/* Keep col-2 images from being excessively tall on desktop */
-.col-2 img {
-  max-height: 460px;
-}
-
-/* Story images on impact page — consistent height side-by-side */
-.grid-2 img {
-  aspect-ratio: 4 / 3;
 }
 
 /* Second image stacked in col-2 (e.g. adoption page) */
@@ -773,6 +761,31 @@ img[data-auto-src] {
   background: var(--bg);
   padding: var(--space-lg);
   text-align: center;
+}
+
+/* --- Impact Page Stat Grids --- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.stat-grid-cell {
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+
+.stat-grid--light .stat-grid-cell {
+  background: var(--bg);
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.stat-grid--alt .stat-grid-cell {
+  background: var(--bg-alt);
 }
 
 /* --- Story Cards --- */
@@ -1440,23 +1453,12 @@ img[data-auto-src] {
     grid-template-columns: 1fr;
   }
 
-  /* When grid-2 collapses, fill width at a natural landscape ratio */
-  .grid-2 img {
-    aspect-ratio: 16 / 9;
-    max-height: 260px;
-  }
-
   .col-2 {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
 
-  /* On mobile, col-2 images fill width without max-height cap */
-  .col-2 img {
-    max-height: 320px;
-  }
-
-  /* Hover effects don't make sense on touch */
+  /* Hover effects don't fire reliably on touch */
   .col-2 img:hover, .grid-2 img:hover {
     transform: none;
     box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.07);
@@ -1464,6 +1466,14 @@ img[data-auto-src] {
 
   .impact-stats {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-grid--light .stat-grid-cell {
+    padding: var(--space-lg) var(--space-md);
   }
 
   .donate-breakdown {
@@ -1481,7 +1491,6 @@ img[data-auto-src] {
 
   .campaign-img {
     max-width: 100%;
-    max-height: 280px;
   }
 
   .footer-inner {
