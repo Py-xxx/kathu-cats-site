@@ -104,6 +104,37 @@
 
 if (typeof lucide !== 'undefined') lucide.createIcons();
 
+/* --- Campaign Notification ---
+   Shown on all pages except the home page (campaign already visible there).
+   Dismissed state persists via localStorage.
+------------------------------------------------------------ */
+(function () {
+  if (window.location.pathname === '/' || window.location.pathname === '') return;
+
+  try {
+    if (localStorage.getItem('campaignNotifDismissed') === '1') return;
+  } catch (e) {}
+
+  var notif = document.createElement('div');
+  notif.className = 'campaign-notif';
+  notif.id = 'campaign-notif';
+  notif.setAttribute('role', 'complementary');
+  notif.innerHTML =
+    '<a href="/#campaigns" class="campaign-notif-link">' +
+      '<span class="campaign-notif-dot"></span>' +
+      'Active Campaign' +
+    '</a>' +
+    '<button class="campaign-notif-close" aria-label="Dismiss">&times;</button>';
+
+  document.body.appendChild(notif);
+
+  notif.querySelector('.campaign-notif-close').addEventListener('click', function () {
+    notif.classList.add('campaign-notif--hiding');
+    setTimeout(function () { notif.style.display = 'none'; }, 250);
+    try { localStorage.setItem('campaignNotifDismissed', '1'); } catch (e) {}
+  });
+})();
+
 /* --- Auto Image Extension Resolver ---
    Finds every <img data-auto-src="..."> and tries extensions in order
    until one loads. Supports jpg, jpeg, png, webp, avif.
