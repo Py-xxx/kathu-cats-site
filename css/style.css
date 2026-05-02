@@ -407,7 +407,8 @@ strong {
 
 /* --- Content Images --- */
 
-/* All data-auto-src images get sensible defaults */
+/* General content image defaults — applies to both src and data-auto-src */
+.col-2 img, .grid-2 img, .grid-3 img,
 img[data-auto-src] {
   width: 100%;
   height: auto;
@@ -415,29 +416,39 @@ img[data-auto-src] {
   object-fit: cover;
   object-position: center;
   border-radius: var(--radius-lg);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.07);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Images inside two-column content layouts */
-.col-2 img[data-auto-src] {
+/* Subtle lift on hover for content images */
+.col-2 img:hover, .grid-2 img:hover {
+  transform: scale(1.012);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Keep col-2 images from being excessively tall on desktop */
+.col-2 img {
+  max-height: 460px;
+}
+
+/* Story images on impact page — consistent height side-by-side */
+.grid-2 img {
   aspect-ratio: 4 / 3;
 }
 
-/* Second image in rescue section (wwd-abandoned) sits below, use 16/9 */
-.col-2 img[data-auto-src] + img[data-auto-src] {
-  aspect-ratio: 16 / 9;
+/* Second image stacked in col-2 (e.g. adoption page) */
+.col-2 img + img {
   margin-top: 1.5rem;
 }
 
-/* Story images on impact page — consistent side-by-side height */
-.grid-2 img[data-auto-src] {
-  aspect-ratio: 3 / 2;
-}
-
-/* Campaign image — keep proportional, don't force crop */
+/* Campaign image — natural proportions, prominent shadow */
 .campaign-img {
-  aspect-ratio: unset;
+  width: 100%;
+  max-width: 420px;
   height: auto;
-  max-width: 560px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: var(--radius-lg);
 }
 
 /* --- Hero --- */
@@ -870,6 +881,14 @@ img[data-auto-src] {
   margin-bottom: 0;
 }
 
+.donate-panel {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: var(--shadow);
+}
+
 .payment-card {
   background: var(--bg);
   border: none;
@@ -1283,9 +1302,35 @@ img[data-auto-src] {
 }
 
 /* ============================================================
-   RESPONSIVE — 768px
+   RESPONSIVE — 1024px (nav gets tight here)
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: var(--space-sm);
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+  .col-2 {
+    gap: 2rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 900px (switch nav to hamburger)
+   ============================================================ */
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .nav-hamburger {
+    display: flex;
+    padding: 10px;     /* larger tap zone */
+    margin: -10px;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
@@ -1293,45 +1338,98 @@ img[data-auto-src] {
     left: 0;
     right: 0;
     background: var(--bg);
+    border-top: 2px solid var(--accent);
     border-bottom: 1px solid var(--border);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0;
-    box-shadow: var(--shadow-lg);
-    padding: var(--space-sm) 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+    z-index: 99;
   }
 
   .nav-links.open {
     display: flex;
+    animation: navSlideDown 0.2s ease forwards;
   }
 
-  .nav-links a {
-    width: 100%;
-    padding: 0.75rem var(--space-md);
-    font-size: 1rem;
+  .nav-links li {
     border-bottom: 1px solid var(--border);
   }
 
-  .nav-links a:last-child {
+  .nav-links li:last-child {
     border-bottom: none;
   }
 
-  .nav-links .btn-nav-donate {
-    background: none;
-    color: var(--accent);
-    padding: 0.75rem var(--space-md);
-    border-radius: 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 1rem;
-    width: 100%;
-  }
-
-  .nav-hamburger {
+  /* Large, easy-to-tap nav items */
+  .nav-links a {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 56px;
+    padding: 0 var(--space-md);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    white-space: normal;
+    transition: background 0.15s, color 0.15s;
   }
 
-  .site-nav {
-    position: sticky;
+  .nav-links a::after {
+    content: '›';
+    font-size: 1.3rem;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: var(--bg-alt);
+    color: var(--accent);
+  }
+
+  .nav-links a.active::after {
+    color: var(--accent);
+  }
+
+  /* Donate button — stands out clearly in the list */
+  .nav-links li:has(.btn-nav-donate) {
+    background: var(--accent);
+  }
+
+  .nav-links .btn-nav-donate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 56px;
+    padding: 0 var(--space-md);
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .nav-links .btn-nav-donate::after {
+    content: '›';
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+  }
+
+  .nav-links .btn-nav-donate:hover {
+    background: rgba(0,0,0,0.1);
+    color: #fff;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 768px (layout columns)
+   ============================================================ */
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 1rem;
   }
 
   .grid-3, .grid-4 {
@@ -1342,22 +1440,48 @@ img[data-auto-src] {
     grid-template-columns: 1fr;
   }
 
+  /* When grid-2 collapses, fill width at a natural landscape ratio */
+  .grid-2 img {
+    aspect-ratio: 16 / 9;
+    max-height: 260px;
+  }
+
   .col-2 {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
 
+  /* On mobile, col-2 images fill width without max-height cap */
+  .col-2 img {
+    max-height: 320px;
+  }
+
+  /* Hover effects don't make sense on touch */
+  .col-2 img:hover, .grid-2 img:hover {
+    transform: none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.07);
+  }
+
   .impact-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .donate-breakdown {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .donate-panel {
+    padding: var(--space-lg) var(--space-md);
+  }
+
   .campaign-display {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .campaign-img {
+    max-width: 100%;
+    max-height: 280px;
   }
 
   .footer-inner {
@@ -1371,36 +1495,60 @@ img[data-auto-src] {
   }
 
   .hero-content h1 {
-    font-size: clamp(1.8rem, 7vw, 2.6rem);
+    font-size: clamp(1.75rem, 7vw, 2.4rem);
+  }
+
+  /* Buttons easier to tap on mobile */
+  .btn {
+    min-height: 48px;
+  }
+
+  /* Involve cards: tighter minimum height for text */
+  .involve-card p {
+    min-height: auto;
   }
 }
 
 /* ============================================================
-   RESPONSIVE — 480px
+   RESPONSIVE — 480px (small phones)
    ============================================================ */
 @media (max-width: 480px) {
   :root {
-    --space-xl: 3rem;
-    --space-2xl: 4rem;
+    --space-xl: 2.25rem;
+    --space-2xl: 3rem;
+    --space-lg: 2rem;
+  }
+
+  .container {
+    padding-inline: 0.9rem;
   }
 
   .nav-logo {
-    gap: 0.35rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .hero {
-    min-height: 75vh;
+    min-height: 70vh;
+  }
+
+  .hero-content p {
+    font-size: 0.97rem;
   }
 
   .hero-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
+  .hero-actions .btn,
   .btn-lg {
     width: 100%;
     justify-content: center;
+    min-height: 52px;
+  }
+
+  .impact-stats {
+    grid-template-columns: 1fr;
   }
 
   .donate-breakdown {
@@ -1409,7 +1557,12 @@ img[data-auto-src] {
 
   .cta-banner .btn-actions {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  .cta-banner .btn-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .wwd-card {
@@ -1422,6 +1575,47 @@ img[data-auto-src] {
   }
 
   .payment-card {
-    padding: var(--space-md);
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .donate-panel {
+    padding: var(--space-md) var(--space-sm);
+    border-radius: var(--radius);
+  }
+
+  /* Prevent iOS from zooming on form focus (needs 16px minimum) */
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+  }
+
+  /* Donation amount buttons — wrap nicely */
+  .donation-amounts {
+    gap: 0.4rem;
+  }
+
+  .donation-amount-btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+
+  /* Card padding */
+  .card {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .involve-card {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  /* Footer */
+  .footer-bottom {
+    gap: 0.4rem;
+  }
+
+  /* Stats on impact page inline styles need small screens help */
+  .stat-number {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
   }
 }
