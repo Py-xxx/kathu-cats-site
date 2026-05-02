@@ -253,6 +253,14 @@
       document.getElementById('donate-amount').value = val;
     }
 
+    function resetYocoBtn() {
+      const btn = document.getElementById('yoco-btn');
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = 'Donate via Yoco';
+      }
+    }
+
     async function donateYoco() {
       const input = document.getElementById('donate-amount');
       const amount = parseFloat(input.value);
@@ -267,6 +275,9 @@
       btn.disabled = true;
       btn.textContent = 'Redirecting…';
 
+      // Re-enable after 15 s in case the redirect stalls
+      const fallbackTimer = setTimeout(resetYocoBtn, 15000);
+
       try {
         const res = await fetch('/.netlify/functions/create-checkout', {
           method: 'POST',
@@ -275,16 +286,22 @@
         });
         const data = await res.json();
         if (data.redirectUrl) {
+          clearTimeout(fallbackTimer);
           window.location.href = data.redirectUrl;
         } else {
           throw new Error(data.error || 'No redirect URL returned');
         }
       } catch (err) {
-        btn.disabled = false;
-        btn.textContent = 'Donate via Yoco';
+        clearTimeout(fallbackTimer);
+        resetYocoBtn();
         showStatus('Something went wrong — please try again or use EFT to donate directly.', 'error');
       }
     }
+
+    // Reset button when user navigates back (browser restores page from cache)
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) resetYocoBtn();
+    });
 
     function showStatus(message, type) {
       const el = document.getElementById('donate-status');
