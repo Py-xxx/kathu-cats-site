@@ -1,6 +1,27 @@
+const rateLimitMap = new Map();
+const RATE_LIMIT = 10;
+const WINDOW_MS = 60 * 1000;
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + WINDOW_MS });
+    return false;
+  }
+  if (entry.count >= RATE_LIMIT) return true;
+  entry.count++;
+  return false;
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
+  }
+
+  const ip = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket?.remoteAddress || 'unknown';
+  if (isRateLimited(ip)) {
+    return res.status(429).json({ error: 'Too many requests — please wait a moment and try again.' });
   }
 
   let body;
