@@ -445,11 +445,27 @@ img[data-auto-src] {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes orbDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-24px, 18px) scale(1.06); }
+  70%       { transform: translate(14px, -12px) scale(0.95); }
+}
+
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(7px); }
+}
+
+@keyframes ringPulse {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
 .donate-hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #0C1E3A 0%, #1A3A6E 50%, #102646 100%);
-  padding: var(--space-2xl) 0 var(--space-xl);
+  background: linear-gradient(145deg, #091828 0%, #1A3A6E 45%, #0E2A50 75%, #071220 100%);
+  padding: calc(var(--space-2xl) * 1.15) 0 var(--space-xl);
   text-align: center;
 }
 
@@ -460,11 +476,37 @@ img[data-auto-src] {
   background: repeating-linear-gradient(
     -45deg,
     transparent,
-    transparent 20px,
-    rgba(255,255,255,0.018) 20px,
-    rgba(255,255,255,0.018) 21px
+    transparent 24px,
+    rgba(255,255,255,0.02) 24px,
+    rgba(255,255,255,0.02) 25px
   );
   pointer-events: none;
+}
+
+/* Floating glow orbs */
+.donate-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.donate-hero-orb--1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(74,144,212,0.22) 0%, transparent 70%);
+  top: -80px;
+  right: -60px;
+  animation: orbDrift 10s ease-in-out infinite;
+}
+
+.donate-hero-orb--2 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(74,144,212,0.15) 0%, transparent 70%);
+  bottom: -40px;
+  left: -40px;
+  animation: orbDrift 13s 2s ease-in-out infinite reverse;
 }
 
 .donate-hero .container {
@@ -476,7 +518,7 @@ img[data-auto-src] {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1rem;
@@ -485,7 +527,7 @@ img[data-auto-src] {
 
 .donate-hero-title {
   color: #fff;
-  font-size: clamp(1.9rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 3.2rem);
   max-width: 640px;
   margin-inline: auto;
   margin-bottom: var(--space-sm);
@@ -494,32 +536,61 @@ img[data-auto-src] {
 }
 
 .donate-hero-sub {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.72);
   font-size: 1.08rem;
-  line-height: 1.75;
-  max-width: 560px;
+  line-height: 1.78;
+  max-width: 520px;
   margin-inline: auto;
   margin-bottom: 0;
   animation: heroFadeUp 0.55s 0.22s ease both;
 }
 
+/* Scroll indicator — circular bouncing button */
+.donate-hero-scroll-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: var(--space-lg);
+  animation: heroFadeUp 0.55s 0.38s ease both;
+}
+
 .donate-hero-scroll {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  margin-top: var(--space-lg);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  color: #fff;
   text-decoration: none;
-  animation: heroFadeUp 0.55s 0.36s ease both, scrollBounce 2.2s 1s ease-in-out infinite;
-  transition: color 0.2s;
+  animation: arrowBounce 1.8s 1s ease-in-out infinite;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+/* Pulsing ring behind the circle */
+.donate-hero-scroll::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid rgba(74,144,212,0.5);
+  animation: ringPulse 2s 1.2s ease-out infinite;
 }
 
 .donate-hero-scroll:hover {
-  color: #fff;
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+}
+
+.donate-hero-scroll-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
 }
 
 /* --- Hero --- */
@@ -1721,6 +1792,9 @@ img[data-auto-src] {
     padding: var(--space-xl) 0 var(--space-lg);
   }
 
+  .donate-hero-orb--1 { width: 260px; height: 260px; }
+  .donate-hero-orb--2 { width: 200px; height: 200px; }
+
   .donate-hero-sub {
     font-size: 1rem;
   }
@@ -1763,19 +1837,24 @@ img[data-auto-src] {
   }
 
   .donate-hero {
-    padding: calc(var(--space-xl) * 0.85) 0 var(--space-md);
+    padding: var(--space-xl) 0 var(--space-md);
   }
 
   .donate-hero-title {
-    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    font-size: clamp(1.65rem, 7vw, 2.2rem);
   }
 
   .donate-hero-sub {
     font-size: 0.95rem;
   }
 
-  .donate-hero-scroll {
+  .donate-hero-scroll-wrap {
     margin-top: var(--space-md);
+  }
+
+  .donate-hero-scroll {
+    width: 50px;
+    height: 50px;
   }
 
   .hero-actions {
